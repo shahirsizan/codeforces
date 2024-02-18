@@ -5,12 +5,12 @@ given_price_list = list(map(int, input().split()))
 m = int(input())
 coupon_list = list(map(int, input().split()))
 
-for i in range(m):
-    copy_given_price_list = given_price_list
-    sorted_list = sorted(copy_given_price_list, reverse=True)   # In decreasing order
+sorted_list = sorted(given_price_list, reverse=True)   # In decreasing order
+summ = sum(sorted_list)
 
-    copy_given_price_list = sorted_list[:(n - coupon_list[i])] + sorted_list[(n - coupon_list[i] + 1):]
-    total_cost_after_coupon = sum(copy_given_price_list)
-    print(total_cost_after_coupon)
+for i in range(m):
+    free_item_index = n-coupon_list[i]
+    net_summ = summ - sorted_list[free_item_index]
+    print(net_summ)
 
 
