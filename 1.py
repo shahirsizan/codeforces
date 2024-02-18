@@ -11,6 +11,6 @@ for i in range(m):
 
     copy_given_price_list = sorted_list[:(n - coupon_list[i])] + sorted_list[(n - coupon_list[i] + 1):]
     total_cost_after_coupon = sum(copy_given_price_list)
-    print(total_cost_after_coupon)
+    print(total_cost_after_coupon    )
 
 
